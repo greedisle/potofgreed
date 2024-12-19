@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <!-- Solana Web3 -->
+  <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
+  <link href="/styles.css" rel="stylesheet">
+  
+  <title>Pot of Greed</title>
+</head>
+
+<body class="text-white relative">
+  <!-- Grain Overlay -->
+  <div class="grain-overlay fixed inset-0 z-50 pointer-events-none"></div>
+
+  <!-- Grid Background -->
+  <div class="fixed inset-0 grid-lines"></div>
+
+  <!-- Header -->
+  <section class="relative min-h-screen">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full top-0 z-40 backdrop-blur-sm border-b border-[#FF4632]/20">
+      <nav class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <!-- Logo and Name -->
+          <div class="flex items-center gap-4">
+            <img src="/group225.png" alt="Pot of Greed Logo" class="h-16 w-auto">
+            <span class="text-xl font-bold tracking-wider text-[#FF4632]">Greed Isle</span>
+          </div>
+          <a href="https://twitter.com/potofgreedbot"
+            class="flex items-center justify-center w-10 h-10 bg-[#FF4632] hover:bg-[#FF4632]/80 transition-colors rounded-full"
+            target="_blank" rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+          </a>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+
+    <section class="relative min-h-screen">
+      <!-- Full-width video background -->
+      <div class="absolute inset-0 w-full h-full overflow-hidden">
+        <video autoplay loop muted playsinline class="object-cover w-full h-full">
+          <source src="/hero.mp4" type="video/mp4">
+          <!-- Fallback to logo if video fails -->
+          <img src="Group 225.png" alt="Pot of Greed Logo" class="h-48 w-auto mx-auto">
+        </video>
+        <!-- Dark overlay for text readability -->
+        <div class="absolute inset-0 bg-[#191414]/60"></div>
+      </div>
+      <!-- Content overlay -->
+      <div class="relative z-10 container mx-auto px-6 h-screen flex flex-col items-center justify-center text-center">
+        <div class="text-overlay">
+          <h1 class="text-7xl mb-8 tracking-tight anta-text glow-text">
+            <span class="block mb-4">Pot Of Greed</span>
+          </h1>
+          <p class="text-xl tracking-wide max-w-2xl mx-auto anta-text" style="color: rgb(7, 248, 179);">
+            Throw it in, you know you want to
+          </p>
+        </div>
+        <a href="https://t.me/YourBotUsername"
+          class="poly-button inline-block px-12 py-4 text-xl tracking-wider anta-text mt-8">
+          Become A Jar Master →
+        </a>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-20 relative poly-bg">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div class="lofi-card p-6 text-center">  <!-- Added text-center -->
+            <div class="w-12 h-12 bg-[#07F8B3]/20 mb-4 rotate-45 mx-auto"></div>  <!-- Added mx-auto -->
+            <h3 class="text-2xl font-bold mb-2 text-[#FF4632]">Who Did? POT DID</h3>  <!-- Changed text-lg to text-2xl -->
+            <p class="text-gray-400 text-base">Will you lose your dust, or will it juice?</p>  <!-- Changed text-sm to text-base -->
+          </div>
+          
+          <div class="lofi-card p-6 text-center">
+            <div class="w-12 h-12 bg-[#FF4632]/20 mb-4 rotate-45 mx-auto"></div>
+            <h3 class="text-2xl font-bold mb-2 text-[#FF4632]">Become A 1%er</h3>
+            <p class="text-gray-400 text-base">Husband why you not become a Jar Master when you had the chance!?</p>
+          </div>
+          
+          <div class="lofi-card p-6 text-center">
+            <div class="w-12 h-12 bg-[#FF4632]/20 mb-4 rotate-45 mx-auto"></div>
+            <h3 class="text-2xl font-bold mb-2 text-[#FF4632]">Tokens & Telegram</h3>
+            <p class="text-gray-400 text-base">Don't mid curve or top blast this. Just believe</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="py-6 border-t border-[#FF4632]/20">
+      <div class="container mx-auto px-6 text-center">
+        <p class="text-sm text-gray-400">© 2024 POT OF GREED • All rights reserved</p>
+      </div>
+    </footer>
+
+    <div id="codeModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="closeModal()">&times;</span>
+        <h2 class="text-2xl mb-4 text-[#FF4632] anta-text">Get Your Referral Code</h2>
+        <input type="text" id="walletAddress" class="wallet-input" placeholder="Enter your Solana wallet address">
+        <button onclick="generateCode()" class="poly-button w-full px-6 py-3 mt-4 text-sm font-bold tracking-wider">
+          Generate Code
+        </button>
+        <div id="codeContainer" class="code-container">
+          <p class="text-sm text-gray-400">Your wallet:</p>
+          <div id="displayWallet" class="code-display"></div>
+          <p class="text-sm text-gray-400 mt-4">Your referral code:</p>
+          <div id="codeDisplay" class="code-display"></div>
+          <button id="copyButton" class="copy-button w-full" onclick="copyCode()">
+            Copy Code
+          </button>
+          <div id="copySuccess" class="copy-success text-center">Code copied!</div>
+        </div>
+      </div>
+    </div>
+    <script src="/scripts.js"></script>
+</body>
+</html>

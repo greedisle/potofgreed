@@ -1,0 +1,289 @@
+
+body {
+    background-color: #191414;
+    font-family: 'Courier New', monospace;
+  }
+  
+  .text-overlay {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px 5px;
+    /* Adds padding around the text */
+    z-index: 10;
+  }
+  
+  .text-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    /* Reduced darkness with 40% opacity */
+    z-index: -1;
+    border-radius: 15px;
+    /* Slightly rounded corners */
+    padding: 10px;
+    /* Additional padding for spacing around the text */
+  }
+  
+  .text-overlay p {
+    margin-bottom: 5px;
+  }
+  
+  .anta-text {
+    font-family: "Anta", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+  }
+  
+  .glow-text {
+    color: rgb(7, 248, 179);
+    text-shadow: 0 0 10px rgba(7, 248, 179, 0.5),
+      0 0 20px rgba(7, 248, 179, 0.3),
+      0 0 30px rgba(7, 248, 179, 0.2);
+  }
+  
+  .outline-text {
+    color: rgb(7, 248, 179);
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+  }
+  
+  .block mb-4 {
+    font-size: 80;
+  }
+  
+  
+  /* Low Poly Shapes */
+  .poly-bg {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%2307F8B3' fill-opacity='0.05' d='M0 0h50l25 25-25 25 25 25-25 25h-50l25-25-25-25 25-25z'/%3E%3C/svg%3E");
+  }
+  
+  .poly-border {
+    background: linear-gradient(45deg,
+        transparent 25%,
+        rgb(7, 248, 179) 25%,
+        rgb(7, 248, 179) 50%,
+        transparent 50%,
+        transparent 75%,
+        rgb(7, 248, 179) 75%);
+    background-size: 20px 20px;
+    background-position: 0 0;
+  }
+  
+  .poly-button {
+    position: relative;
+    background: #F8074C;
+    border: 2px solid rgb(248, 7, 76);
+    clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+    transition: all 0.3s ease;
+    color: #FFFFFF !important;
+    box-shadow: 0 0 15px rgba(248, 7, 76, 0.3);
+  }
+  
+  .poly-button:hover {
+    transform: translateY(-2px);
+    background: rgb(249, 57, 112);
+    color: #191414 !important;
+    box-shadow: 0 0 20px rgba(249, 57, 112, 0.5);
+  }
+  
+  /* Animations */
+  @keyframes float {
+  
+    0%,
+    100% {
+      transform: translateY(0)
+    }
+  
+    50% {
+      transform: translateY(-10px)
+    }
+  }
+  
+  @keyframes pulse-slow {
+  
+    0%,
+    100% {
+      opacity: 0.5;
+    }
+  
+    50% {
+      opacity: 0.8;
+    }
+  }
+  
+  @keyframes grain {
+  
+    0%,
+    100% {
+      transform: translate(0, 0)
+    }
+  
+    10% {
+      transform: translate(-2%, -2%)
+    }
+  
+    30% {
+      transform: translate(1%, -1%)
+    }
+  
+    50% {
+      transform: translate(-1%, 2%)
+    }
+  
+    70% {
+      transform: translate(3%, 1%)
+    }
+  
+    90% {
+      transform: translate(-1%, -1%)
+    }
+  }
+  
+  .grain-overlay::before {
+    content: '';
+    position: fixed;
+    top: -150%;
+    left: -50%;
+    width: 300%;
+    height: 300%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+    animation: grain 8s steps(10) infinite;
+    pointer-events: none;
+    opacity: 0.15;
+  }
+  
+  .floating {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .pulsing {
+    animation: pulse-slow 4s ease-in-out infinite;
+  }
+  
+  /* Lo-Fi Card */
+  .lofi-card {
+    background: #191414;
+    border: 1px solid #FF4632;
+    transition: all 0.3s ease;
+  }
+  
+  .lofi-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 70, 50, 0.2);
+  }
+  
+  /* Low Poly Button */
+  .poly-button {
+    position: relative;
+    background: #FF4632;
+    clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+    transition: all 0.3s ease;
+  }
+  
+  .poly-button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+  }
+  
+  /* Grid Lines */
+  .grid-lines {
+    background-image:
+      linear-gradient(to right, #07F8B3 1px, transparent 1px),
+      linear-gradient(to bottom, #07F8B3 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.1;
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    position: relative;
+    background-color: #191414;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #FF4632;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+  }
+  
+  .close-button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #FF4632;
+  }
+  
+  .wallet-input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background-color: #2a2a2a;
+    border: 1px solid #FF4632;
+    color: white;
+    border-radius: 4px;
+  }
+  
+  .code-display {
+    background-color: #2a2a2a;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 4px;
+    text-align: center;
+    color: #07F8B3;
+    font-family: 'Courier New', monospace;
+  }
+  
+  .code-container {
+    display: none;
+    margin-top: 20px;
+  }
+  
+  .code-display {
+    background-color: #2a2a2a;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 4px;
+    text-align: center;
+    color: #07F8B3;
+    font-family: 'Courier New', monospace;
+    /* Remove the display: none from here */
+  }
+  
+  .copy-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #FF4632;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    border: none;
+    font-family: 'Courier New', monospace;
+    transition: all 0.3s ease;
+  }
+  
+  .copy-success {
+    color: #07F8B3;
+    font-size: 14px;
+    margin-top: 8px;
+    display: none;
+  }
